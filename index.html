@@ -11,7 +11,6 @@
   --text:#1a1a18;--text2:#6b6a64;--text3:#a09e96;
   --blue:#0052cc;--blue-bg:#e8f0fe;--blue-dark:#003087;
   --green:#1b5e20;--green-bg:#e8f5e9;
-  --warn-bg:#fff8e1;--warn:#e65100;
   --radius:16px;--radius-sm:10px;
 }
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);min-height:100vh;display:flex;justify-content:center;padding:0;}
@@ -62,7 +61,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .cname{font-size:14px;font-weight:600;color:var(--text);}
 .cstat{font-size:11px;color:#2e7d32;margin-top:1px;}
 .cflag{margin-left:auto;font-size:20px;}
-
 .msgs{flex:1;padding:1rem;display:flex;flex-direction:column;gap:12px;overflow-y:auto;min-height:280px;}
 .mrow{display:flex;align-items:flex-end;gap:8px;}
 .mrow.u{justify-content:flex-end;}
@@ -70,7 +68,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .bub{max-width:82%;padding:11px 14px;font-size:14px;line-height:1.6;white-space:pre-wrap;}
 .bub.bot{background:var(--bg);border:1px solid var(--border);border-radius:4px 16px 16px 16px;color:var(--text);}
 .bub.u{background:linear-gradient(135deg,#003087,#0052cc);color:#fff;border-radius:16px 16px 4px 16px;}
-
 .charea{padding:0 1rem .5rem;display:flex;flex-direction:column;gap:8px;}
 .chbtn{width:100%;padding:13px 16px;border-radius:var(--radius-sm);background:var(--card);border:1.5px solid var(--border);cursor:pointer;text-align:left;font-size:14px;color:var(--text);display:flex;align-items:center;gap:10px;transition:all .15s;font-weight:500;}
 .chbtn:hover{border-color:#0052cc;background:#f0f4ff;color:#0052cc;}
@@ -82,33 +79,25 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .phone-label{font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px;}
 .phone-sub{font-size:13px;color:var(--text2);margin-bottom:14px;line-height:1.6;}
 .phone-row{display:flex;gap:8px;}
-.phone-row input{flex:1;padding:13px 14px;font-size:16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);background:var(--card);color:var(--text);outline:none;letter-spacing:.02em;}
+.phone-row input{flex:1;padding:13px 14px;font-size:16px;border:1.5px solid var(--border);border-radius:var(--radius-sm);background:var(--card);color:var(--text);outline:none;}
 .phone-row input:focus{border-color:#0052cc;}
 .phone-row input::placeholder{color:var(--text3);}
 .phone-btn{padding:13px 20px;background:linear-gradient(135deg,#003087,#0052cc);color:#fff;border:none;border-radius:var(--radius-sm);cursor:pointer;font-size:14px;font-weight:600;white-space:nowrap;}
 .phone-skip{display:block;text-align:center;font-size:12px;color:var(--text3);margin-top:12px;cursor:pointer;text-decoration:underline;}
 .phone-privacy{font-size:11px;color:var(--text3);margin-top:10px;line-height:1.5;padding:8px 10px;background:var(--bg);border-radius:8px;}
 
-/* saving indicator */
-.saving-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text3);padding:6px 0;}
-.saving-dot{width:8px;height:8px;border-radius:50%;background:#ccc;animation:pulse 1.2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
-.saved-badge{display:flex;align-items:center;gap:6px;font-size:12px;color:#2e7d32;padding:6px 0;}
-
-/* CTA */
+/* RESULT */
 #cta-area{padding:0 1rem 1.5rem;display:none;}
-.ctabox{border-radius:var(--radius);padding:1.25rem;}
+.ctabox{border-radius:var(--radius);padding:1.5rem;}
 .cta-ok{background:var(--green-bg);border:1.5px solid #a5d6a7;}
-.cta-no{background:var(--warn-bg);border:1.5px solid #ffe082;}
-.ctah{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
-.ctah-icon{font-size:24px;}
-.ctah-text{font-size:15px;font-weight:700;}
-.cta-ok .ctah-text{color:var(--green);}
-.cta-no .ctah-text{color:var(--warn);}
-.ctad{font-size:13px;line-height:1.6;margin-bottom:14px;}
-.cta-ok .ctad{color:#2e7d32;}
-.cta-no .ctad{color:var(--warn);}
-.conf-badge{background:#fff;border:1px solid #a5d6a7;border-radius:var(--radius-sm);padding:8px 12px;font-size:12px;color:#2e7d32;margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+.ctah{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.ctah-icon{font-size:28px;}
+.ctah-text{font-size:16px;font-weight:700;color:var(--green);}
+.ctad{font-size:13px;line-height:1.7;color:#2e7d32;margin-bottom:16px;}
+.conf-badge{background:#fff;border:1px solid #a5d6a7;border-radius:var(--radius-sm);padding:10px 14px;font-size:13px;color:#1b5e20;margin-bottom:14px;display:flex;align-items:center;gap:8px;font-weight:600;}
+.summary-box{background:#fff;border:1px solid #a5d6a7;border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:14px;}
+.summary-row{display:flex;justify-content:space-between;font-size:12px;padding:3px 0;color:#2e7d32;}
+.summary-row span:first-child{color:var(--text2);}
 .btn-apply{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#1b5e20,#2e7d32);color:#fff;text-decoration:none;padding:14px;border-radius:var(--radius-sm);font-size:15px;font-weight:700;margin-bottom:10px;transition:opacity .15s;}
 .btn-apply:hover{opacity:.9;}
 .btn-msg{display:flex;align-items:center;justify-content:center;gap:8px;background:#1877F2;color:#fff;text-decoration:none;padding:13px;border-radius:var(--radius-sm);font-size:14px;font-weight:600;transition:opacity .15s;}
@@ -183,27 +172,25 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </div>
 
 <script>
-// ★ 여기에 Apps Script 배포 URL 붙여넣기
-const APPS_SCRIPT_URL = https://script.google.com/macros/s/AKfycby4ckvX0SilBRPOg3CXhxu31Rwp3io5R-qfc6iCkyYz5RkP1OPOvurR0kRTwv08hBg/exec
-
-const APPLY_URL = 'https://m.jbbank.co.kr/P_M_BDT189321_01.act?seq=202606120300280&dvcd=13&skp=N&slf=01&dvcd2=03&dvcd1=0000';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby4ckvX0SilBRPOg3CXhxu31Rwp3io5R-qfc6iCkyYz5RkP1OPOvurR0kRTwv08hBg/exec';
 const FB_URL = 'https://m.me/YOUR_PAGE_ID';
+const APPLY_URL = 'https://m.jbbank.co.kr/P_M_BDT189321_01.act?seq=202606120300280&dvcd=13&skp=N&slf=01&dvcd2=03&dvcd1=0000';
 
 const T = {
-  ph:{ visa:"What's your visa type in Korea?", months:"How long have you been working in Korea?", salary:"What's your annual salary?", phone:"Almost done! 📞", phone_sub:"Leave your number and a loan officer will contact you personally.", phone_placeholder:"+63 or 010-XXXX-XXXX", phone_btn:"Submit", phone_skip:"Skip for now →", phone_privacy:"🔒 Your number is used only for loan consultation. Never shared with third parties.", checking:"Checking your eligibility... 🔍", apply_btn:"Apply Now — JB Bank Official", msg_btn:"Chat with a loan officer on Messenger", confirmed:"✅ We'll call you at" },
-  ne:{ visa:"तपाईंको भिसा प्रकार?", months:"कति महिना काम गर्नुभयो?", salary:"वार्षिक आय?", phone:"फोन नम्बर 📞", phone_sub:"ऋण अधिकारीले तपाईंलाई कल गर्नेछन्।", phone_placeholder:"010-XXXX-XXXX", phone_btn:"पठाउनुहोस्", phone_skip:"अहिले छोड्नुहोस् →", phone_privacy:"🔒 तपाईंको नम्बर केवल ऋण परामर्शको लागि प्रयोग गरिनेछ।", checking:"जाँच गर्दै...", apply_btn:"अहिले आवेदन गर्नुहोस्", msg_btn:"Messenger मा सम्पर्क", confirmed:"✅ हामी कल गर्नेछौं:" },
-  si:{ visa:"ඔබේ වීසා වර්ගය?", months:"කොපමණ කාලයක් සේවය?", salary:"වාර්ෂික ආදායම?", phone:"දුරකථන අංකය 📞", phone_sub:"ණය නිලධාරියෙකු ඔබට කතා කරනු ඇත.", phone_placeholder:"010-XXXX-XXXX", phone_btn:"යවන්න", phone_skip:"මඟ හරිනවා →", phone_privacy:"🔒 ඔබේ අංකය ණය උපදේශනය සඳහා පමණි.", checking:"පරීක්ෂා කරමින්...", apply_btn:"දැන් අයදුම් කරන්න", msg_btn:"Messenger හරහා සම්බන්ධ", confirmed:"✅ අපි ඔබට කතා කරන්නෙමු:" },
-  id:{ visa:"Apa jenis visa Anda?", months:"Berapa lama bekerja di Korea?", salary:"Berapa gaji tahunan Anda?", phone:"Nomor Telepon 📞", phone_sub:"Petugas pinjaman akan menghubungi Anda.", phone_placeholder:"010-XXXX-XXXX", phone_btn:"Kirim", phone_skip:"Lewati →", phone_privacy:"🔒 Nomor Anda hanya untuk konsultasi pinjaman.", checking:"Sedang memeriksa...", apply_btn:"Daftar Sekarang", msg_btn:"Chat di Messenger", confirmed:"✅ Kami akan menghubungi:" },
-  my:{ visa:"သင်၏ဗီဇာအမျိုးအစား?", months:"ဘယ်နှစ်လ အလုပ်လုပ်ပြီး?", salary:"နှစ်စဉ်ဝင်ငွေ?", phone:"ဖုန်းနံပါတ် 📞", phone_sub:"ချေးငွေ အရာရှိ ဆက်သွယ်ပေးမည်။", phone_placeholder:"010-XXXX-XXXX", phone_btn:"တင်ပြပါ", phone_skip:"ကျော်သွားမည် →", phone_privacy:"🔒 သင်၏ဖုန်းနံပါတ်သည် ချေးငွေ တိုင်ပင်ဆွေးနွေးရန်သာ အသုံးပြုမည်။", checking:"စစ်ဆေးနေသည်...", apply_btn:"လျှောက်ထားပါ", msg_btn:"Messenger တွင် ဆက်သွယ်", confirmed:"✅ ကျွန်ုပ်တို့ ဆက်သွယ်မည်:" },
-  kh:{ visa:"ប្រភេទទិដ្ឋាការ?", months:"បានធ្វើការប៉ុន្មានខែ?", salary:"ប្រាក់ចំណូលប្រចាំឆ្នាំ?", phone:"លេខទូរស័ព្ទ 📞", phone_sub:"មន្រ្តីប្រាក់កម្ចីនឹងទូរស័ព្ទមកអ្នក។", phone_placeholder:"010-XXXX-XXXX", phone_btn:"ដាក់ស្នើ", phone_skip:"រំលង →", phone_privacy:"🔒 លេខរបស់អ្នកត្រូវបានប្រើសម្រាប់ប្រឹក្សាប្រាក់កម្ចីតែប៉ុណ្ណោះ។", checking:"កំពុងពិនិត្យ...", apply_btn:"ដាក់ពាក្យឥឡូវ", msg_btn:"ទំនាក់ទំនងតាម Messenger", confirmed:"✅ យើងនឹងទូរស័ព្ទទៅ:" },
-  bd:{ visa:"আপনার ভিসার ধরন?", months:"কতদিন কাজ করছেন?", salary:"বার্ষিক আয়?", phone:"ফোন নম্বর 📞", phone_sub:"ঋণ কর্মকর্তা আপনাকে ফোন করবেন।", phone_placeholder:"010-XXXX-XXXX", phone_btn:"জমা দিন", phone_skip:"এড়িয়ে যান →", phone_privacy:"🔒 আপনার নম্বর শুধুমাত্র ঋণ পরামর্শের জন্য ব্যবহার করা হবে।", checking:"যাচাই করা হচ্ছে...", apply_btn:"এখনই আবেদন করুন", msg_btn:"Messenger এ যোগাযোগ", confirmed:"✅ আমরা কল করব:" },
-  uz:{ visa:"Viza turingiz?", months:"Qancha vaqt ishladingiz?", salary:"Yillik daromad?", phone:"Telefon raqam 📞", phone_sub:"Kredit xodimi siz bilan bog'lanadi.", phone_placeholder:"010-XXXX-XXXX", phone_btn:"Yuborish", phone_skip:"O'tkazib yuborish →", phone_privacy:"🔒 Raqamingiz faqat kredit maslahati uchun ishlatiladi.", checking:"Tekshirilmoqda...", apply_btn:"Hozir murojaat qiling", msg_btn:"Messenger orqali bog'laning", confirmed:"✅ Biz siz bilan bog'lanamiz:" },
-  kg:{ visa:"Визаңыздын түрү?", months:"Канча ай иштедиңиз?", salary:"Жылдык киреше?", phone:"Телефон номер 📞", phone_sub:"Кредит кызматкери сизге чалат.", phone_placeholder:"010-XXXX-XXXX", phone_btn:"Жөнөтүү", phone_skip:"Өткөрүп жиберүү →", phone_privacy:"🔒 Номериңиз кредит кеңеши үчүн гана колдонулат.", checking:"Текшерилүүдө...", apply_btn:"Азыр өтүнүч бериңиз", msg_btn:"Messenger аркылуу байланыш", confirmed:"✅ Биз сизге чалабыз:" },
-  zh:{ visa:"您的签证类型?", months:"在韩工作多久了?", salary:"年收入?", phone:"电话号码 📞", phone_sub:"贷款顾问将与您联系。", phone_placeholder:"010-XXXX-XXXX", phone_btn:"提交", phone_skip:"跳过 →", phone_privacy:"🔒 您的号码仅用于贷款咨询，不会与第三方共享。", checking:"正在检查资格...", apply_btn:"立即申请", msg_btn:"Messenger咨询", confirmed:"✅ 我们将联系您:" },
-  vi:{ visa:"Loại visa của bạn?", months:"Bạn làm việc bao lâu?", salary:"Thu nhập hàng năm?", phone:"Số điện thoại 📞", phone_sub:"Chuyên viên sẽ gọi điện tư vấn cho bạn.", phone_placeholder:"010-XXXX-XXXX", phone_btn:"Gửi", phone_skip:"Bỏ qua →", phone_privacy:"🔒 Số của bạn chỉ dùng cho tư vấn vay vốn.", checking:"Đang kiểm tra...", apply_btn:"Đăng ký ngay", msg_btn:"Chat qua Messenger", confirmed:"✅ Chúng tôi sẽ gọi cho bạn:" },
-  th:{ visa:"ประเภทวีซ่าของคุณ?", months:"ทำงานมานานแค่ไหน?", salary:"รายได้ต่อปี?", phone:"หมายเลขโทรศัพท์ 📞", phone_sub:"เจ้าหน้าที่จะโทรหาคุณ", phone_placeholder:"010-XXXX-XXXX", phone_btn:"ส่ง", phone_skip:"ข้ามไป →", phone_privacy:"🔒 หมายเลขของคุณใช้สำหรับให้คำปรึกษาเท่านั้น", checking:"กำลังตรวจสอบ...", apply_btn:"สมัครเลย", msg_btn:"ติดต่อผ่าน Messenger", confirmed:"✅ เราจะโทรหาคุณที่:" },
-  mn:{ visa:"Визний төрөл?", months:"Хэдэн сар ажилласан бэ?", salary:"Жилийн орлого?", phone:"Утасны дугаар 📞", phone_sub:"Зээлийн мэргэжилтэн таньтай холбогдоно.", phone_placeholder:"010-XXXX-XXXX", phone_btn:"Илгээх", phone_skip:"Алгасах →", phone_privacy:"🔒 Таны дугаарыг зөвхөн зээлийн зөвлөгөөнд ашиглана.", checking:"Шалгаж байна...", apply_btn:"Одоо өргөдөл гаргах", msg_btn:"Messenger-ээр холбогдох", confirmed:"✅ Бид танд залгана:" },
-  en:{ visa:"What's your visa type?", months:"How long have you worked in Korea?", salary:"What's your annual salary?", phone:"Phone Number 📞", phone_sub:"A loan officer will contact you personally.", phone_placeholder:"010-XXXX-XXXX", phone_btn:"Submit", phone_skip:"Skip for now →", phone_privacy:"🔒 Your number is used only for loan consultation.", checking:"Checking eligibility...", apply_btn:"Apply Now — JB Bank Official", msg_btn:"Chat on Messenger", confirmed:"✅ We'll call you at:" },
+  ph:{ visa:"What's your visa type in Korea?", months:"How long have you been working in Korea?", salary:"What's your annual salary?", phone:"Almost done! 📞", phone_sub:"Leave your number and our loan officer will call you within 24 hours!", phone_placeholder:"+63 or 010-XXXX-XXXX", phone_btn:"Submit", phone_skip:"Skip for now →", phone_privacy:"🔒 Your number is used only for loan consultation. Never shared.", result_head:"We received your inquiry! 🎉", result_desc:"Thank you! Our loan officer will review your information and contact you within 24 hours.\n\nYou can also apply directly on the JB Bank official page, or chat with us on Messenger!", conf_label:"📞 We'll call you at:", apply_btn:"Apply Now — JB Bank Official", msg_btn:"Chat with us on Messenger" },
+  ne:{ visa:"तपाईंको भिसा प्रकार?", months:"कति महिना काम गर्नुभयो?", salary:"वार्षिक आय?", phone:"फोन नम्बर 📞", phone_sub:"हाम्रो ऋण अधिकारीले २४ घण्टाभित्र सम्पर्क गर्नेछन्!", phone_placeholder:"010-XXXX-XXXX", phone_btn:"पठाउनुहोस्", phone_skip:"अहिले छोड्नुहोस् →", phone_privacy:"🔒 केवल ऋण परामर्शको लागि।", result_head:"सम्पर्क प्राप्त भयो! 🎉", result_desc:"धन्यवाद! हाम्रो ऋण अधिकारीले २४ घण्टाभित्र सम्पर्क गर्नेछन्।", conf_label:"📞 कल गर्नेछौं:", apply_btn:"अहिले आवेदन गर्नुहोस्", msg_btn:"Messenger मा सम्पर्क" },
+  si:{ visa:"ඔබේ වීසා වර්ගය?", months:"කොපමණ කාලයක් සේවය?", salary:"වාර්ෂික ආදායම?", phone:"දුරකථන අංකය 📞", phone_sub:"අපගේ නිලධාරියෙකු පැය 24 ඇතුළත ඔබට කතා කරනු ඇත!", phone_placeholder:"010-XXXX-XXXX", phone_btn:"යවන්න", phone_skip:"මඟ හරිනවා →", phone_privacy:"🔒 ණය උපදේශනය සඳහා පමණි.", result_head:"ලැබුණා! 🎉", result_desc:"ස්තූතියි! අපගේ නිලධාරියෙකු පැය 24 ඇතුළත ඔබට කතා කරනු ඇත.", conf_label:"📞 අපි ඔබට කතා කරන්නෙමු:", apply_btn:"දැන් අයදුම් කරන්න", msg_btn:"Messenger හරහා සම්බන්ධ" },
+  id:{ visa:"Apa jenis visa Anda?", months:"Berapa lama bekerja di Korea?", salary:"Berapa gaji tahunan Anda?", phone:"Nomor Telepon 📞", phone_sub:"Petugas kami akan menghubungi Anda dalam 24 jam!", phone_placeholder:"010-XXXX-XXXX", phone_btn:"Kirim", phone_skip:"Lewati →", phone_privacy:"🔒 Hanya untuk konsultasi pinjaman.", result_head:"Terima kasih! 🎉", result_desc:"Petugas pinjaman kami akan menghubungi Anda dalam 24 jam.", conf_label:"📞 Kami akan menghubungi:", apply_btn:"Daftar Sekarang", msg_btn:"Chat di Messenger" },
+  my:{ visa:"သင်၏ဗီဇာအမျိုးအစား?", months:"ဘယ်နှစ်လ အလုပ်လုပ်ပြီး?", salary:"နှစ်စဉ်ဝင်ငွေ?", phone:"ဖုန်းနံပါတ် 📞", phone_sub:"ကျွန်ုပ်တို့၏ဝန်ထမ်းသည် ၂၄နာရီအတွင်း ဆက်သွယ်ပေးမည်!", phone_placeholder:"010-XXXX-XXXX", phone_btn:"တင်ပြပါ", phone_skip:"ကျော်သွားမည် →", phone_privacy:"🔒 ချေးငွေ တိုင်ပင်ရန်သာ အသုံးပြုမည်။", result_head:"လက်ခံရရှိပြီ! 🎉", result_desc:"ကျေးဇူးတင်ပါသည်! ၂၄နာရီအတွင်း ဆက်သွယ်ပေးမည်။", conf_label:"📞 ဆက်သွယ်မည်:", apply_btn:"လျှောက်ထားပါ", msg_btn:"Messenger တွင် ဆက်သွယ်" },
+  kh:{ visa:"ប្រភេទទិដ្ឋាការ?", months:"បានធ្វើការប៉ុន្មានខែ?", salary:"ប្រាក់ចំណូលប្រចាំឆ្នាំ?", phone:"លេខទូរស័ព្ទ 📞", phone_sub:"មន្រ្តីរបស់យើងនឹងទូរស័ព្ទក្នុងរយៈពេល ២៤ ម៉ោង!", phone_placeholder:"010-XXXX-XXXX", phone_btn:"ដាក់ស្នើ", phone_skip:"រំលង →", phone_privacy:"🔒 សម្រាប់ប្រឹក្សាប្រាក់កម្ចីតែប៉ុណ្ណោះ។", result_head:"បានទទួល! 🎉", result_desc:"អរគុណ! មន្រ្តីរបស់យើងនឹងទូរស័ព្ទក្នុងរយៈពេល ២៤ ម៉ោង។", conf_label:"📞 យើងនឹងទូរស័ព្ទទៅ:", apply_btn:"ដាក់ពាក្យឥឡូវ", msg_btn:"ទំនាក់ទំនងតាម Messenger" },
+  bd:{ visa:"আপনার ভিসার ধরন?", months:"কতদিন কাজ করছেন?", salary:"বার্ষিক আয়?", phone:"ফোন নম্বর 📞", phone_sub:"আমাদের কর্মকর্তা ২৪ ঘণ্টার মধ্যে যোগাযোগ করবেন!", phone_placeholder:"010-XXXX-XXXX", phone_btn:"জমা দিন", phone_skip:"এড়িয়ে যান →", phone_privacy:"🔒 শুধুমাত্র ঋণ পরামর্শের জন্য।", result_head:"পেয়েছি! 🎉", result_desc:"ধন্যবাদ! আমাদের কর্মকর্তা ২৪ ঘণ্টার মধ্যে যোগাযোগ করবেন।", conf_label:"📞 কল করব:", apply_btn:"এখনই আবেদন করুন", msg_btn:"Messenger এ যোগাযোগ" },
+  uz:{ visa:"Viza turingiz?", months:"Qancha vaqt ishladingiz?", salary:"Yillik daromad?", phone:"Telefon raqam 📞", phone_sub:"Mutaxassisimiz 24 soat ichida siz bilan bog'lanadi!", phone_placeholder:"010-XXXX-XXXX", phone_btn:"Yuborish", phone_skip:"O'tkazib yuborish →", phone_privacy:"🔒 Faqat kredit maslahati uchun.", result_head:"Qabul qilindi! 🎉", result_desc:"Rahmat! Mutaxassisimiz 24 soat ichida siz bilan bog'lanadi.", conf_label:"📞 Bog'lanamiz:", apply_btn:"Hozir murojaat qiling", msg_btn:"Messenger orqali bog'laning" },
+  kg:{ visa:"Визаңыздын түрү?", months:"Канча ай иштедиңиз?", salary:"Жылдык киреше?", phone:"Телефон номер 📞", phone_sub:"Адисибиз 24 саат ичинде сизге чалат!", phone_placeholder:"010-XXXX-XXXX", phone_btn:"Жөнөтүү", phone_skip:"Өткөрүп жиберүү →", phone_privacy:"🔒 Кредит кеңеши үчүн гана.", result_head:"Кабыл алынды! 🎉", result_desc:"Рахмат! Адисибиз 24 саат ичинде сизге чалат.", conf_label:"📞 Чалабыз:", apply_btn:"Азыр өтүнүч бериңиз", msg_btn:"Messenger аркылуу байланыш" },
+  zh:{ visa:"您的签证类型?", months:"在韩工作多久了?", salary:"年收入?", phone:"电话号码 📞", phone_sub:"我们的顾问将在24小时内与您联系!", phone_placeholder:"010-XXXX-XXXX", phone_btn:"提交", phone_skip:"跳过 →", phone_privacy:"🔒 仅用于贷款咨询，不与第三方共享。", result_head:"已收到您的申请! 🎉", result_desc:"感谢您！我们的贷款顾问将在24小时内与您联系。", conf_label:"📞 我们将联系您:", apply_btn:"立即申请", msg_btn:"Messenger咨询" },
+  vi:{ visa:"Loại visa của bạn?", months:"Bạn làm việc bao lâu?", salary:"Thu nhập hàng năm?", phone:"Số điện thoại 📞", phone_sub:"Chuyên viên của chúng tôi sẽ liên hệ trong vòng 24 giờ!", phone_placeholder:"010-XXXX-XXXX", phone_btn:"Gửi", phone_skip:"Bỏ qua →", phone_privacy:"🔒 Chỉ dùng cho tư vấn vay vốn.", result_head:"Đã nhận! 🎉", result_desc:"Cảm ơn bạn! Chuyên viên sẽ liên hệ trong vòng 24 giờ.", conf_label:"📞 Chúng tôi sẽ gọi:", apply_btn:"Đăng ký ngay", msg_btn:"Chat qua Messenger" },
+  th:{ visa:"ประเภทวีซ่าของคุณ?", months:"ทำงานมานานแค่ไหน?", salary:"รายได้ต่อปี?", phone:"หมายเลขโทรศัพท์ 📞", phone_sub:"เจ้าหน้าที่จะติดต่อคุณภายใน 24 ชั่วโมง!", phone_placeholder:"010-XXXX-XXXX", phone_btn:"ส่ง", phone_skip:"ข้ามไป →", phone_privacy:"🔒 ใช้สำหรับให้คำปรึกษาเท่านั้น", result_head:"ได้รับแล้ว! 🎉", result_desc:"ขอบคุณ! เจ้าหน้าที่จะติดต่อคุณภายใน 24 ชั่วโมง", conf_label:"📞 เราจะโทรหาคุณที่:", apply_btn:"สมัครเลย", msg_btn:"ติดต่อผ่าน Messenger" },
+  mn:{ visa:"Визний төрөл?", months:"Хэдэн сар ажилласан бэ?", salary:"Жилийн орлого?", phone:"Утасны дугаар 📞", phone_sub:"Манай мэргэжилтэн 24 цагийн дотор холбогдоно!", phone_placeholder:"010-XXXX-XXXX", phone_btn:"Илгээх", phone_skip:"Алгасах →", phone_privacy:"🔒 Зөвхөн зээлийн зөвлөгөөнд ашиглана.", result_head:"Хүлээн авлаа! 🎉", result_desc:"Баярлалаа! Манай мэргэжилтэн 24 цагийн дотор холбогдоно.", conf_label:"📞 Бид залгана:", apply_btn:"Одоо өргөдөл гаргах", msg_btn:"Messenger-ээр холбогдох" },
+  en:{ visa:"What's your visa type?", months:"How long have you worked in Korea?", salary:"What's your annual salary?", phone:"Phone Number 📞", phone_sub:"Our loan officer will contact you within 24 hours!", phone_placeholder:"010-XXXX-XXXX", phone_btn:"Submit", phone_skip:"Skip for now →", phone_privacy:"🔒 Used only for loan consultation.", result_head:"We received your inquiry! 🎉", result_desc:"Thank you! Our loan officer will review your information and contact you within 24 hours.", conf_label:"📞 We'll call you at:", apply_btn:"Apply Now — JB Bank Official", msg_btn:"Chat on Messenger" },
 };
 
 const cfgs={
@@ -223,19 +210,8 @@ const cfgs={
   en:{flag:'🌐',name:'Bravo Korea Loan Check',nat:''},
 };
 
-const reducedNat=['Vietnam','Thailand','Mongolia'];
-const langNames={ne:'Nepali',si:'Sinhala',id:'Indonesian',my:'Burmese',kh:'Khmer',bd:'Bengali',uz:'Uzbek',kg:'Kyrgyz',zh:'Chinese',vi:'Vietnamese',th:'Thai',mn:'Mongolian',en:'English',ph:'Taglish (warm Filipino+English)'};
-
-const LOAN_DATA=`BRAVO KOREA LOANS (JB Bank 2026.04.17)
-LIMITS: Vietnam/Thailand/Mongolia MAX 10M KRW. Others MAX 50M KRW.
-E-9: 1mo+ employed, salary>=15M/yr, 3-57mo, 12.12-19.9%
-E-7: 1mo+ employed, salary>=15M/yr, 3-42mo
-F-2: employed 3mo+ salary>=15M OR self-emp 6mo+ income>=12M
-F-4: China/Uzbekistan/Kazakhstan only | 12mo+ salary>=20M OR self-emp 12mo+ income>=20M
-F-5: 12mo+ salary>=15M OR self-emp 12mo+ income>=12M
-F-6: same as F-5
-Car Loan (F-2/4/5/6): 6mo+ salary>=20M, max 50M, 11.2-15.5%
-Pocket Loan (E-7/9/F-2/4/5/6/D-2): 3mo+ salary>=15M, max 5M, 10.11-17.9%`;
+const salaryLabels={'<15m':'< ₩15,000,000','15-25m':'₩15M – ₩25M','25-40m':'₩25M – ₩40M','>40m':'> ₩40,000,000'};
+const monthsLabels={'<1':'< 1 month','1-3':'1–3 months','3-12':'3–12 months','1-3y':'1–3 years','>3y':'3+ years'};
 
 function getSteps(code){
   const t=T[code]||T.en;
@@ -269,26 +245,10 @@ function getSteps(code){
   ];
 }
 
-function getSys(code,answers){
-  const nat=cfgs[code].nat;
-  const reduced=reducedNat.includes(nat);
-  const langNote=code==='ph'
-    ?'Use warm friendly Taglish. Be encouraging. Example: "Congrats! Pwede ka mag-apply!"'
-    :`Respond ONLY in ${langNames[code]||'English'}. Be warm and positive.`;
-  return `You are a loan eligibility consultant for JB Bank Bravo Korea. ${langNote}
-${reduced?`CRITICAL: Customer from ${nat}. Max loan = 10,000,000 KRW.`:''}
-${LOAN_DATA}
-User: visa=${answers.visa}, months=${answers.months}, salary=${answers.salary}, nationality=${nat}
-Give a warm specific assessment: product name, max amount, rate, repayment period.
-End with EXACTLY ONE JSON at the very end:
-Eligible: {"cta":"eligible","product":"[name]","amount":"[number only, e.g. 30000000]"}
-Ineligible: {"cta":"ineligible"}`;
-}
-
-let lang='en',step=0,answers={},loading=false,ctaShown=false,phone='',steps=[],ctaResult=null;
+let lang='en',step=0,answers={},steps=[],phone='';
 
 function startChat(code){
-  lang=code;step=0;answers={};loading=false;ctaShown=false;phone='';ctaResult=null;
+  lang=code; step=0; answers={}; phone='';
   steps=getSteps(code);
   const cfg=cfgs[code];
   document.getElementById('landing').style.display='none';
@@ -307,10 +267,9 @@ function startChat(code){
 function showStep(idx){
   if(idx>=steps.length){showPhoneStep();return;}
   step=idx;
-  setP(Math.round(10+(idx/steps.length)*55));
-  const s=steps[idx];
-  addBot(s.msg);
-  renderChoices(s.choices,idx);
+  setP(Math.round(10+(idx/steps.length)*60));
+  addBot(steps[idx].msg);
+  renderChoices(steps[idx].choices,idx);
 }
 
 function renderChoices(choices,idx){
@@ -331,7 +290,7 @@ function renderChoices(choices,idx){
 }
 
 function showPhoneStep(){
-  setP(75);
+  setP(80);
   document.getElementById('charea').innerHTML='';
   const t=T[lang]||T.en;
   const area=document.getElementById('phone-area');
@@ -352,100 +311,56 @@ function submitPhone(skip){
   const val=skip?'':(document.getElementById('phone-input')||{}).value||'';
   phone=val.trim();
   document.getElementById('phone-area').style.display='none';
-  const t=T[lang]||T.en;
   if(phone) addUser('📞 '+phone);
-  runEval();
+  saveToSheet();
+  showResult();
 }
 
-async function runEval(){
-  setP(88);
-  const t=T[lang]||T.en;
-  addBot(t.checking);
-  loading=true;
-  try{
-    const res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:700,
-        system:getSys(lang,answers),
-        messages:[{role:'user',content:'Give me my loan eligibility result.'}]})
-    });
-    const data=await res.json();
-    const raw=data.content?.[0]?.text||'';
-    let text=raw,cta=null;
-    const m=raw.match(/\{[^}]*"cta"\s*:\s*"(eligible|ineligible)"[^}]*\}/);
-    if(m){try{cta=JSON.parse(m[0]);text=raw.replace(m[0],'').trim();}catch(e){}}
-    // remove checking bubble
-    const msgs=document.getElementById('msgs');
-    if(msgs.lastChild) msgs.removeChild(msgs.lastChild);
-    addBot(text);
-    ctaResult=cta;
-    setP(100);
-    // save to Google Sheets
-    await saveToSheet(cta);
-    if(cta) setTimeout(()=>showCTA(cta),400);
-  }catch(e){
-    addBot('Error. Please try again.');
-  }
-  loading=false;
-}
-
-async function saveToSheet(cta){
+async function saveToSheet(){
   if(!APPS_SCRIPT_URL||APPS_SCRIPT_URL==='YOUR_APPS_SCRIPT_URL') return;
   const nat=cfgs[lang].nat;
-  const payload={
-    phone: phone||'(skipped)',
-    nationality: nat||lang,
-    visa: answers.visa||'',
-    months: answers.months||'',
-    salary: answers.salary||'',
-    result: cta?cta.cta:'unknown',
-    product: cta?cta.product||'':'',
-    amount: cta?cta.amount||'':'',
-    source: document.referrer||'direct'
-  };
   try{
     await fetch(APPS_SCRIPT_URL,{
-      method:'POST',
-      mode:'no-cors',
+      method:'POST', mode:'no-cors',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify(payload)
+      body:JSON.stringify({
+        phone: phone||'(skipped)',
+        nationality: nat||lang,
+        visa: answers.visa||'',
+        months: answers.months||'',
+        salary: answers.salary||'',
+        result: 'pending',
+        product: '',
+        amount: '',
+        source: document.referrer||'direct'
+      })
     });
-  }catch(e){
-    console.log('Sheet save failed (non-critical):',e);
-  }
+  }catch(e){ console.log('Sheet save:',e); }
 }
 
-function showCTA(d){
-  if(ctaShown)return; ctaShown=true;
+function showResult(){
+  setP(100);
+  const t=T[lang]||T.en;
+  const nat=cfgs[lang].nat;
+  const flag=cfgs[lang].flag;
+  const confBadge=phone?`<div class="conf-badge">📞 ${t.conf_label} <strong>${phone}</strong></div>`:'';
+  const summary=`
+    <div class="summary-box">
+      <div class="summary-row"><span>Nationality</span><span>${flag} ${nat||lang}</span></div>
+      <div class="summary-row"><span>Visa</span><span>${answers.visa||'-'}</span></div>
+      <div class="summary-row"><span>Employment</span><span>${monthsLabels[answers.months]||answers.months||'-'}</span></div>
+      <div class="summary-row"><span>Annual Salary</span><span>${salaryLabels[answers.salary]||answers.salary||'-'}</span></div>
+    </div>`;
   const area=document.getElementById('cta-area');
   area.style.display='block';
-  const t=T[lang]||T.en;
-  const confBadge=phone?`<div class="conf-badge">📞 ${t.confirmed} <strong>${phone}</strong></div>`:'';
-  if(d.cta==='eligible'){
-    const amt=d.amount?'₩'+Number(d.amount).toLocaleString():'₩50,000,000';
-    const head=lang==='ph'?`Pwede ka mag-apply! 🎉 Up to ${amt}`:`You qualify! 🎉 Up to ${amt}`;
-    const desc=lang==='ph'
-      ?`Congrats! You're eligible for the <strong>${d.product||'Bravo Korea'}</strong> loan. I-click ang button para mag-apply ngayon!`
-      :`You're eligible for <strong>${d.product||'Bravo Korea'}</strong>. Click below to apply on the official JB Bank page.`;
-    area.innerHTML=`<div class="ctabox cta-ok">
-      <div class="ctah"><span class="ctah-icon">🎉</span><span class="ctah-text">${head}</span></div>
-      ${confBadge}
-      <div class="ctad">${desc}</div>
-      <a class="btn-apply" href="${APPLY_URL}" target="_blank">🏦 ${t.apply_btn}</a>
-      <a class="btn-msg" href="${FB_URL}" target="_blank">💬 ${t.msg_btn}</a>
-    </div>`;
-  }else{
-    const head=lang==='ph'?'Hindi pa pwede — pero may options pa!':'Not eligible yet — there may still be options!';
-    const desc=lang==='ph'
-      ?'Hindi ka pa qualify ngayon, pero mag-chat tayo sa aming loan officer — may ibang paraan pa!'
-      :'Your current conditions may not meet the standard requirements, but a loan officer may still be able to help.';
-    area.innerHTML=`<div class="ctabox cta-no">
-      <div class="ctah"><span class="ctah-icon">💬</span><span class="ctah-text">${head}</span></div>
-      ${confBadge}
-      <div class="ctad">${desc}</div>
-      <a class="btn-msg" href="${FB_URL}" target="_blank">💬 ${t.msg_btn}</a>
-    </div>`;
-  }
+  area.innerHTML=`<div class="ctabox cta-ok">
+    <div class="ctah"><span class="ctah-icon">🎉</span><span class="ctah-text">${t.result_head}</span></div>
+    ${confBadge}
+    ${summary}
+    <div class="ctad">${t.result_desc}</div>
+    <a class="btn-apply" href="${APPLY_URL}" target="_blank">🏦 ${t.apply_btn}</a>
+    <a class="btn-msg" href="${FB_URL}" target="_blank">💬 ${t.msg_btn}</a>
+  </div>`;
   document.getElementById('msgs').scrollTop=99999;
 }
 
@@ -463,9 +378,8 @@ function addUser(t){
   const msgs=document.getElementById('msgs');msgs.appendChild(wrap);msgs.scrollTop=99999;
 }
 function setP(pct){document.getElementById('pfill').style.width=pct+'%';}
-
 function resetApp(){
-  lang='en';step=0;answers={};loading=false;ctaShown=false;phone='';steps=[];ctaResult=null;
+  lang='en';step=0;answers={};steps=[];phone='';
   document.getElementById('chatbox').style.display='none';
   document.getElementById('landing').style.display='block';
   document.getElementById('msgs').innerHTML='';
