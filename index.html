@@ -93,6 +93,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .summary-row span:first-child{color:var(--text2);}
 .btn-apply{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#1b5e20,#2e7d32);color:#fff;text-decoration:none;padding:14px;border-radius:var(--radius-sm);font-size:15px;font-weight:700;transition:opacity .15s;}
 .btn-apply:hover{opacity:.9;}
+.btn-msg{display:flex;align-items:center;justify-content:center;gap:8px;background:#1877F2;color:#fff;text-decoration:none;padding:13px;border-radius:var(--radius-sm);font-size:14px;font-weight:600;margin-top:10px;transition:opacity .15s;}
+.btn-msg:hover{opacity:.9;}
 
 @media(max-width:480px){
   body{padding:0;}
@@ -159,6 +161,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 </div>
 <script>
 var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby4ckvX0SilBRPOg3CXhxu31Rwp3io5R-qfc6iCkyYz5RkP1OPOvurR0kRTwv08hBg/exec';
+var FB_URL = 'https://m.me/maries23sk';
 var APPLY_URL = 'https://m.jbbank.co.kr/P_M_BDT189321_01.act?seq=202606120300280&dvcd=13&skp=N&slf=01&dvcd2=03&dvcd1=0000';
 
 // ── 언어 설정 ──────────────────────────────────────────────────
@@ -179,7 +182,8 @@ var LANG = {
     result_head: 'We received your inquiry! &#127881;',
     result_desc: 'Salamat! Our loan officer will review your info and contact you within 24 hours.\n\nYou can also apply directly on the JB Bank official page below.',
     conf_label: '&#128222; We\'ll call you at:',
-    apply_btn: 'Apply Now &#8212; JB Bank Official'
+    apply_btn: 'Apply Now &#8212; JB Bank Official',
+    msg_btn: 'Chat with a loan officer on Messenger'
   },
   ne: {
     name: 'Bravo Korea &#2346;&#2352;&#2366;&#2350;&#2352;&#2381;&#2358;', nat: 'Nepal',
@@ -197,7 +201,8 @@ var LANG = {
     result_head: '&#2360;&#2350;&#2381;&#2346;&#2352;&#2381;&#2325; &#2346;&#2381;&#2352;&#2366;&#2346;&#2381;&#2340; &#2349;&#2351;&#2379;! &#127881;',
     result_desc: '&#2343;&#2344;&#2381;&#2351;&#2357;&#2366;&#2342;! &#2361;&#2366;&#2350;&#2381;&#2352;&#2379; &#2323;&#2339; &#2309;&#2343;&#2367;&#2325;&#2366;&#2352;&#2368;&#2354;&#2375; 24 &#2328;&#2339;&#2381;&#2335;&#2366;&#2349;&#2367;&#2340;&#2352; &#2360;&#2350;&#2381;&#2346;&#2352;&#2381;&#2325; &#2327;&#2352;&#2381;&#2344;&#2375;&#2331;&#2344;.',
     conf_label: '&#128222; &#2325;&#2354; &#2327;&#2352;&#2381;&#2344;&#2375;&#2331;&#2380;&#2306;:',
-    apply_btn: '&#2309;&#2361;&#2367;&#2354;&#2375; &#2310;&#2357;&#2375;&#2342;&#2344; &#2327;&#2352;&#2381;&#2344;&#2369;&#2361;&#2379;&#2360;&#2381;'
+    apply_btn: '&#2309;&#2361;&#2367;&#2354;&#2375; &#2310;&#2357;&#2375;&#2342;&#2344; &#2327;&#2352;&#2381;&#2344;&#2369;&#2361;&#2379;&#2360;&#2381;',
+    msg_btn: 'Messenger ma samparka'
   },
   si: {
     name: 'Bravo Korea Loan', nat: 'Sri Lanka',
@@ -215,7 +220,8 @@ var LANG = {
     result_head: 'Received! &#127881;',
     result_desc: 'Thank you! Our loan officer will contact you within 24 hours.',
     conf_label: '&#128222; We\'ll call:',
-    apply_btn: 'Apply Now &#8212; JB Bank'
+    apply_btn: 'Apply Now &#8212; JB Bank',
+    msg_btn: 'Chat on Messenger'
   },
   id: {
     name: 'Konsultasi Bravo Korea', nat: 'Indonesia',
@@ -233,7 +239,8 @@ var LANG = {
     result_head: 'Terima kasih! &#127881;',
     result_desc: 'Petugas pinjaman kami akan menghubungi Anda dalam 24 jam.',
     conf_label: '&#128222; Kami akan menghubungi:',
-    apply_btn: 'Daftar Sekarang &#8212; JB Bank'
+    apply_btn: 'Daftar Sekarang &#8212; JB Bank',
+    msg_btn: 'Chat di Messenger'
   },
   my: {
     name: 'Bravo Korea Loan', nat: 'Myanmar',
@@ -251,7 +258,8 @@ var LANG = {
     result_head: 'Received! &#127881;',
     result_desc: 'Our loan officer will contact you within 24 hours.',
     conf_label: '&#128222; We\'ll call:',
-    apply_btn: 'Apply Now &#8212; JB Bank'
+    apply_btn: 'Apply Now &#8212; JB Bank',
+    msg_btn: 'Chat on Messenger'
   },
   kh: {
     name: 'Bravo Korea Loan', nat: 'Cambodia',
@@ -269,7 +277,8 @@ var LANG = {
     result_head: 'Received! &#127881;',
     result_desc: 'Our loan officer will contact you within 24 hours.',
     conf_label: '&#128222; We\'ll call:',
-    apply_btn: 'Apply Now &#8212; JB Bank'
+    apply_btn: 'Apply Now &#8212; JB Bank',
+    msg_btn: 'Chat on Messenger'
   },
   bd: {
     name: 'Bravo Korea Loan', nat: 'Bangladesh',
@@ -287,7 +296,8 @@ var LANG = {
     result_head: '&#2474;&#2503;&#2527;&#2503;&#2459;&#2495;! &#127881;',
     result_desc: '&#2471;&#2472;&#2509;&#2479;&#2476;&#2494;&#2470;! 24 &#2498;&#2467;&#2472;&#2509;&#2463;&#2494;&#2480; &#2478;&#2471;&#2509;&#2479;&#2503; &#2479;&#2507;&#2455;&#2494;&#2479;&#2507;&#2455; &#2453;&#2480;&#2476;&#2503;&#2472;.',
     conf_label: '&#128222; &#2453;&#2482; &#2453;&#2480;&#2476;:',
-    apply_btn: '&#2447;&#2454;&#2472;&#2439;&#2439; &#2438;&#2476;&#2503;&#2470;&#2472; &#2453;&#2480;&#2497;&#2472;'
+    apply_btn: '&#2447;&#2454;&#2472;&#2439;&#2439; &#2438;&#2476;&#2503;&#2470;&#2472; &#2453;&#2480;&#2497;&#2472;',
+    msg_btn: 'Messenger e jogajog korun'
   },
   uz: {
     name: 'Bravo Korea Kredit', nat: 'Uzbekistan',
@@ -305,7 +315,8 @@ var LANG = {
     result_head: 'Qabul qilindi! &#127881;',
     result_desc: 'Rahmat! Mutaxassisimiz 24 soat ichida siz bilan bog\'lanadi.',
     conf_label: '&#128222; Bog\'lanamiz:',
-    apply_btn: 'Hozir murojaat qiling &#8212; JB Bank'
+    apply_btn: 'Hozir murojaat qiling &#8212; JB Bank',
+    msg_btn: 'Messenger orqali bog'laning'
   },
   kg: {
     name: 'Bravo Korea Kredit', nat: 'Kyrgyzstan',
@@ -323,7 +334,8 @@ var LANG = {
     result_head: 'Kabyl alyndy! &#127881;',
     result_desc: 'Rahmat! Adisibiz 24 saat ichinde sizge chalat.',
     conf_label: '&#128222; Chalabyз:',
-    apply_btn: 'Azyr murojaat &#8212; JB Bank'
+    apply_btn: 'Azyr murojaat &#8212; JB Bank',
+    msg_btn: 'Messenger arkyluu baylanys'
   },
   zh: {
     name: 'Bravo Korea &#36151;&#27454;&#21592;&#35810;', nat: 'China',
@@ -341,7 +353,8 @@ var LANG = {
     result_head: '&#24050;&#25910;&#21040;&#24744;&#30340;&#30003;&#35831;! &#127881;',
     result_desc: '&#24863;&#35874;&#24744;&#65281;&#25105;&#20204;&#30340;&#36151;&#27454;&#39069;&#38382;&#23558;&#22312;24&#23567;&#26102;&#20869;&#19982;&#24744;&#32852;&#31995;&#12290;',
     conf_label: '&#128222; &#25105;&#20204;&#23558;&#32852;&#31995;&#24744;:',
-    apply_btn: '&#31435;&#21363;&#30003;&#35831; &#8212; JB Bank'
+    apply_btn: '&#31435;&#21363;&#30003;&#35831; &#8212; JB Bank',
+    msg_btn: 'Messenger&#21592;&#35810;'
   },
   vi: {
     name: 'Bravo Korea Vay Von', nat: 'Vietnam',
@@ -359,7 +372,8 @@ var LANG = {
     result_head: 'Da nhan! &#127881;',
     result_desc: 'Cam on ban! Chuyen vien se lien he trong vong 24 gio.',
     conf_label: '&#128222; Chung toi se goi:',
-    apply_btn: 'Dang ky ngay &#8212; JB Bank'
+    apply_btn: 'Dang ky ngay &#8212; JB Bank',
+    msg_btn: 'Chat qua Messenger'
   },
   th: {
     name: 'Bravo Korea &#3626;&#3636;&#3609;&#3648;&#3594;&#3639;&#3656;&#3629;', nat: 'Thailand',
@@ -377,7 +391,8 @@ var LANG = {
     result_head: '&#3652;&#3604;&#3657;&#3619;&#3633;&#3610;&#3649;&#3621;&#3657;&#3623;! &#127881;',
     result_desc: '&#3586;&#3629;&#3610;&#3588;&#3640;&#3603;! &#3648;&#3592;&#3657;&#3634;&#3627;&#3609;&#3657;&#3634;&#3607;&#3637;&#3592;&#3632;&#3605;&#3636;&#3604;&#3605;&#3656;&#3629;&#3616;&#3634;&#3618;&#3651;&#3609; 24 &#3594;&#3633;&#3656;&#3623;&#3650;&#3617;&#3591;',
     conf_label: '&#128222; &#3648;&#3619;&#3634;&#3592;&#3632;&#3650;&#3607;&#3619;:',
-    apply_btn: '&#3626;&#3617;&#3633;&#3588;&#3619;&#3648;&#3621;&#3618; &#8212; JB Bank'
+    apply_btn: '&#3626;&#3617;&#3633;&#3588;&#3619;&#3648;&#3621;&#3618; &#8212; JB Bank',
+    msg_btn: '&#3605;&#3636;&#3604;&#3605;&#3656;&#3629;&#3612;&#3656;&#3634;&#3609; Messenger'
   },
   mn: {
     name: 'Bravo Korea &#1047;&#1101;&#1101;&#1083;', nat: 'Mongolia',
@@ -395,7 +410,8 @@ var LANG = {
     result_head: '&#1061;&#1199;&#1083;&#1101;&#1101;&#1085; &#1072;&#1074;&#1083;&#1072;&#1072;! &#127881;',
     result_desc: '&#1041;&#1072;&#1103;&#1088;&#1083;&#1072;&#1083;&#1072;&#1072;! &#1052;&#1072;&#1085;&#1072;&#1081; &#1084;&#1101;&#1088;&#1075;&#1077;&#1078;&#1080;&#1083;&#1090;&#1101;&#1085; 24 &#1094;&#1072;&#1075;&#1080;&#1081;&#1085; &#1076;&#1086;&#1090;&#1086;&#1088; &#1093;&#1086;&#1083;&#1073;&#1086;&#1075;&#1076;&#1086;&#1085;&#1086;.',
     conf_label: '&#128222; &#1041;&#1080;&#1076; &#1079;&#1072;&#1083;&#1075;&#1072;&#1085;&#1072;:',
-    apply_btn: '&#1054;&#1076;&#1086;&#1086; &#1257;&#1088;&#1075;&#1257;&#1076;&#1083;&#1077;&#1083; &#8212; JB Bank'
+    apply_btn: '&#1054;&#1076;&#1086;&#1086; &#1257;&#1088;&#1075;&#1257;&#1076;&#1083;&#1077;&#1083; &#8212; JB Bank',
+    msg_btn: 'Messenger-eer holbogdoh'
   },
   en: {
     name: 'Bravo Korea Loan Check', nat: '',
@@ -413,7 +429,8 @@ var LANG = {
     result_head: 'We received your inquiry! &#127881;',
     result_desc: 'Thank you! Our loan officer will review your information and contact you within 24 hours.\n\nYou can also apply directly on the JB Bank official page below.',
     conf_label: '&#128222; We\'ll call you at:',
-    apply_btn: 'Apply Now &#8212; JB Bank Official'
+    apply_btn: 'Apply Now &#8212; JB Bank Official',
+    msg_btn: 'Chat with a loan officer on Messenger'
   }
 };
 
@@ -570,6 +587,7 @@ function showResult() {
     confBadge + summary +
     '<div class="ctad">' + t.result_desc + '</div>' +
     '<a class="btn-apply" href="' + APPLY_URL + '" target="_blank">&#127968; ' + t.apply_btn + '</a>' +
+    '<a class="btn-msg" href="' + FB_URL + '" target="_blank">&#128172; ' + t.msg_btn + '</a>' +
     '</div>';
   document.getElementById('msgs').scrollTop = 99999;
 }
