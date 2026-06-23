@@ -309,15 +309,16 @@ function submitPhone(skip){
   phone=val.trim();
   document.getElementById('phone-area').style.display='none';
   if(phone) addUser('📞 '+phone);
-  saveToSheet();
-  showResult();
+  showResult();           // 결과 먼저 즉시 보여주고
+  saveToSheet();          // 저장은 백그라운드에서
 }
 
-async function saveToSheet(){
+function saveToSheet(){
   if(!APPS_SCRIPT_URL||APPS_SCRIPT_URL==='YOUR_APPS_SCRIPT_URL') return;
   const nat=cfgs[lang].nat;
-  try{
-    await fetch(APPS_SCRIPT_URL,{
+  // fire-and-forget — UI 블로킹 없이 백그라운드 저장
+  setTimeout(()=>{
+    fetch(APPS_SCRIPT_URL,{
       method:'POST', mode:'no-cors',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({
@@ -331,8 +332,8 @@ async function saveToSheet(){
         amount: '',
         source: document.referrer||'direct'
       })
-    });
-  }catch(e){ console.log('Sheet save:',e); }
+    }).catch(e=>console.log('Sheet save:',e));
+  }, 100);
 }
 
 function showResult(){
